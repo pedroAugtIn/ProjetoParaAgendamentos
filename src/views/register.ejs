@@ -1,0 +1,58 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Cadastrar Novo Usuário:</h1>
+      <p class="text-center lead">Preencha os campos abaixo com seus dados pessoais:</p>
+
+      <%- include('includes/messages'); %>
+
+      <form class="form-cadastro" action="/register/register" method="POST">
+        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+        <div class="form-group">
+            <label for="exampleInputName">Nome Completo</label>
+            <input type="text" class="form-control" id="exampleInputName" name="name" aria-describedby="nameHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputAge">Idade</label>
+            <input type="number" class="form-control" id="exampleInputAge" name="age" aria-describedby="ageHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCpf">CPF</label>
+            <input type="text" class="form-control" id="exampleInputCpf" name="cpf" aria-describedby="cpfHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPhone">Telefone (DDD + Número)</label>
+            <input type="text" class="form-control" id="exampleInputPhone" name="phone" aria-describedby="phoneHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+            
+        <button type="submit" class="btn btn-primary">Criar Conta</button>
+        <small id="textHelp" class="form-text text-muted">Já possui um cadastro? <a href="/login">Clique aqui.</a></small>
+    </form>
+
+
+      <div class="responsive-table">
+        <table class="table my-3">
+         
+        </table>
+      </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer'); %>
+<%- include('includes/navfoot'); %>

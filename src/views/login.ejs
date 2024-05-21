@@ -1,0 +1,40 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Entre na sua conta:</h1>
+      <p class="text-center lead">É necessário criar uma conta e conectá-la para ver os horários disponíveis e fazer agendamentos.</p>
+
+      <%- include('includes/messages'); %>
+
+      <form class="form-login" action="/login/login" method="POST">
+        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">Ainda não tem uma conta? <a href="/register">Clique aqui.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+      <div class="responsive-table">
+        <table class="table my-3">
+         
+        </table>
+      </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer'); %>
+<%- include('includes/navfoot'); %>
+    

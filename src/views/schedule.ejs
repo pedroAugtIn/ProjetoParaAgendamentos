@@ -1,0 +1,28 @@
+<%- include('includes/head'); %> <%- include('includes/nav'); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <% if(!user) { %>
+      <h1 class="text-center">Você precisa estar logado para fazer agendamentos.</h1>
+      <p class="text-center lead">Ir para a aba de <a href="/login">login</a>.</p>
+      <p class="text-center lead">Ainda não possui um cadastro? <a href="/register">Criar nova conta</a>.</p>
+      <% } else { %>
+      <h1 class="text-center">Fazer novo agendamento:</h1>
+      <p class="text-center lead">Primeiro selecione o dia de sua preferência e veja os horários disponíveis.</p>
+
+      <%- include('includes/calendar') %>
+
+      <div class="responsive-table">
+        <table class="table my-3"></table>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer'); %> <%- include('includes/navfoot'); %>
